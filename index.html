@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SYMBATECH</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="SYMBATECH, Dakar : logiciels sur mesure, sites, applications et SaaS, et une agence de communication : logo, branding, infographie, community management, motion design, vidéo publicitaire et acquisition de clients.">
+<meta name="description" content="SYMBATECH, Dakar : logiciels sur mesure, sites et applications métier, et une agence de communication : logo, branding, infographie, community management, motion design, vidéo publicitaire et acquisition de clients.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
 html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 
-/* Layout: cool paper canvas, ink type, one signal orange. Hero = headline + floating studio desk (code, post, logo, video). Services pinned in a horizontal run; real client sites as a hover list; créa work in a bento; deep ink band for the SaaS. */
+/* Layout: cool paper canvas, ink type, one signal orange. Hero = headline + floating studio desk (code, post, logo, video). Services pinned in a horizontal run; real client sites as a hover list; créa work in a bento; deep ink band for client applications. */
 @property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
 :root{
   --paper:#f4f5f7; --surface:#ffffff; --ink:#0f1121; --muted:#5e6172; --line:#e2e3e9;
@@ -22,13 +22,8 @@ html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
   --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   --max:1280px; --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#0b0c16; --surface:#14162a; --ink:#f1f1f4; --muted:#a0a3b8; --line:#26283f; --brand:#c9cdfc; --accent-soft:#3a1d12;
-  --deep:#05060d; --deep-2:#11132a; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#0b0c16; --surface:#14162a; --ink:#f1f1f4; --muted:#a0a3b8; --line:#26283f; --brand:#c9cdfc; --accent-soft:#3a1d12;
-  --deep:#05060d; --deep-2:#11132a; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -98,17 +93,9 @@ section{padding-block:130px;position:relative}
 .nav a.l::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
 .nav a.l:hover::after{transform:scaleX(1);transform-origin:left}
 .nav .btn{padding:.75rem 1.15rem}
-.theme{position:relative;width:44px;height:44px;flex:none;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center;overflow:hidden;transition:border-color .3s,transform .4s var(--ease)}
-.theme:hover{border-color:var(--accent);transform:rotate(-15deg)}
-.theme svg{position:absolute;width:20px;height:20px;transition:transform .6s var(--ease),opacity .4s}
-.theme .moon{transform:translateY(130%) rotate(-60deg);opacity:0}
-.theme[data-mode="dark"] .sun{transform:translateY(-130%) rotate(90deg);opacity:0}
-.theme[data-mode="dark"] .moon{transform:none;opacity:1;color:var(--accent)}
-::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 .menu-btn{display:none;margin-left:auto;background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:10px 16px;font:600 .88rem var(--body);cursor:pointer;position:relative;z-index:2}
 @media (max-width:1000px){
-  .menu-btn{display:block;margin-left:10px}
-  .theme{margin-left:auto;position:relative;z-index:2}
+  .menu-btn{display:block}
   .nav{position:fixed;inset:0;background:var(--deep);flex-direction:column;justify-content:center;align-items:flex-start;padding:0 max(28px,env(safe-area-inset-left,0px));gap:16px;clip-path:circle(0% at calc(100% - 50px) 40px);transition:clip-path .7s var(--ease);z-index:-1}
   .nav.open{clip-path:circle(150% at calc(100% - 50px) 40px)}
   .nav a.l{color:#fff;font-family:var(--display);font-stretch:118%;font-size:2.1rem;font-weight:800}
@@ -437,7 +424,7 @@ a.ac:hover>svg{color:var(--accent);transform:rotate(45deg)}
 @media (max-width:1000px){.social-run{grid-template-columns:1fr;gap:50px}.fs1{right:-10px}.fs2{left:-10px}}
 @media (max-width:560px){.acs{grid-template-columns:1fr}.phone-wrap{max-width:280px}.fs1{right:-16px}.fs2{left:-16px}}
 
-/* SaaS deep */
+/* Applications deep */
 .deep{background:var(--deep);color:var(--on-deep);overflow:hidden}
 .deep .eyebrow,.deep .lead{color:var(--on-deep-muted)}
 .deep::before{content:"";position:absolute;width:900px;height:900px;left:50%;top:-420px;margin-left:-450px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%);animation:breathe 8s ease-in-out infinite;pointer-events:none}
@@ -666,16 +653,12 @@ footer .lg small{color:var(--on-deep-muted)}
 <header class="top" id="top">
   <div class="wrap">
     <a class="logo" href="#accueil" aria-label="SYMBATECH, accueil"><b><strong>SYMBA</strong><span>TECH</span></b><small>SOLUTIONS NUMÉRIQUES</small></a>
-    <button class="theme" id="themeBtn" type="button" aria-label="Passer en mode nuit" title="Mode jour / nuit">
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
-      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
-    </button>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav">
       <a class="l" href="#entreprise">L'entreprise</a>
       <a class="l" href="#services">Services</a>
       <a class="l" href="#realisations">Réalisations</a>
-      <a class="l" href="#produits">Nos SaaS</a>
+      <a class="l" href="#produits">Applications</a>
       <a class="l" href="#methode">Méthode</a>
       <a class="btn" href="#contact">Démarrer un projet <svg><use href="#i-arrow"/></svg></a>
     </nav>
@@ -694,7 +677,7 @@ footer .lg small{color:var(--on-deep-muted)}
         <span class="line"><span>fait grandir</span></span>
         <span class="line"><span><em>votre</em> <span class="rot" id="rot"><b class="on">business.</b><b>marque.</b><b>image.</b><b>clientèle.</b></span></span></span>
       </h1>
-      <p class="lead">Logiciels, sites, applications et SaaS d'un côté. Logo, affiches, réseaux sociaux et vidéos de l'autre. SYMBATECH réunit la tech et la communication pour vous apporter plus de clients.</p>
+      <p class="lead">Logiciels, sites et applications métier d'un côté. Logo, affiches, réseaux sociaux et vidéos de l'autre. SYMBATECH réunit la tech et la communication pour vous apporter plus de clients.</p>
       <div class="hero-cta">
         <a class="btn btn-fill" href="#contact">Parler de votre projet <svg><use href="#i-arrow"/></svg></a>
         <a class="btn" href="#realisations">Voir nos réalisations</a>
@@ -702,7 +685,7 @@ footer .lg small{color:var(--on-deep-muted)}
       <div class="trust">
         <div><b>8 sites</b><small>en ligne</small></div><i></i>
         <div><b>2 pays</b><small>Sénégal et Guinée</small></div><i></i>
-        <div><b>4 SaaS</b><small>à tester en ligne</small></div>
+        <div><b>4 applis</b><small>métier livrées</small></div>
       </div>
     </div>
 
@@ -729,7 +712,7 @@ footer .lg small{color:var(--on-deep-muted)}
         <div class="tl"><svg><use href="#i-play"/></svg><div class="tr"><i id="vbar"></i></div><span id="vtime">00:00</span></div>
       </div></div></div>
       <div class="pc p-chip" data-d="56"><div class="fl" style="animation-delay:-4s"><div class="chip">
-        <span class="ic"><svg><use href="#i-nfc"/></svg></span><span>4 SaaS en ligne<small>NFC · Spa · Crèche · Boutique</small></span><span class="dot"></span>
+        <span class="ic"><svg><use href="#i-nfc"/></svg></span><span>4 applications livrées<small>NFC · Spa · Crèche · Boutique</small></span><span class="dot"></span>
       </div></div></div>
       <a class="badge" href="#services" aria-label="Voir les services">
         <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text><textPath href="#circ" textLength="286">SYMBATECH · TECH &amp; CRÉA · DAKAR · </textPath></text></svg>
@@ -741,7 +724,7 @@ footer .lg small{color:var(--on-deep-muted)}
 
 <div class="bands" aria-hidden="true">
   <div class="band b2"><div class="track"><span>Création de logo</span><i></i><span class="o">Community management</span><i></i><span>Vidéo publicitaire</span><i></i><span class="o">Motion design</span><i></i><span>Personal branding</span><i></i><span class="o">Affiches</span><i></i></div><div class="track"><span>Création de logo</span><i></i><span class="o">Community management</span><i></i><span>Vidéo publicitaire</span><i></i><span class="o">Motion design</span><i></i><span>Personal branding</span><i></i><span class="o">Affiches</span><i></i></div></div>
-  <div class="band b1"><div class="track"><span>Logiciels sur mesure</span><i></i><span class="o">Sites web</span><i></i><span>Applications mobiles</span><i></i><span class="o">Solutions SaaS</span><i></i><span>Cartes NFC</span><i></i><span class="o">Hébergement</span><i></i></div><div class="track"><span>Logiciels sur mesure</span><i></i><span class="o">Sites web</span><i></i><span>Applications mobiles</span><i></i><span class="o">Solutions SaaS</span><i></i><span>Cartes NFC</span><i></i><span class="o">Hébergement</span><i></i></div></div>
+  <div class="band b1"><div class="track"><span>Logiciels sur mesure</span><i></i><span class="o">Sites web</span><i></i><span>Applications mobiles</span><i></i><span class="o">Applications métier</span><i></i><span>Cartes NFC</span><i></i><span class="o">Hébergement</span><i></i></div><div class="track"><span>Logiciels sur mesure</span><i></i><span class="o">Sites web</span><i></i><span>Applications mobiles</span><i></i><span class="o">Applications métier</span><i></i><span>Cartes NFC</span><i></i><span class="o">Hébergement</span><i></i></div></div>
 </div>
 
 <section id="entreprise">
@@ -757,7 +740,7 @@ footer .lg small{color:var(--on-deep-muted)}
       <div class="stat"><span class="num" data-count="2">2</span><p>pays : Sénégal et Guinée</p></div>
     </div>
     <div class="pillars">
-      <div class="pillar rv"><small>Concevoir</small><h3>Des outils qui font gagner du temps</h3><p>Logiciels de gestion, sites, applications et SaaS, simples à utiliser et suivis dans la durée.</p></div>
+      <div class="pillar rv"><small>Concevoir</small><h3>Des outils qui font gagner du temps</h3><p>Logiciels de gestion, sites et applications métier, simples à utiliser et suivis dans la durée.</p></div>
       <div class="pillar rv"><small>Créer</small><h3>Une image qui vous ressemble</h3><p>Logo, charte, affiches, vidéos : une identité forte et cohérente, reconnaissable au premier regard.</p></div>
       <div class="pillar rv"><small>Faire grandir</small><h3>Plus de visibilité, plus de clients</h3><p>Réseaux sociaux, publicité et suivi des résultats pour transformer l'attention en ventes. <span class="todo">historique et fondateur à ajouter</span></p></div>
     </div>
@@ -775,7 +758,7 @@ footer .lg small{color:var(--on-deep-muted)}
       <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-code"/></svg></span><h3>Logiciels sur mesure</h3><p>Des applications de gestion construites autour de vos processus.</p><ul><li>Gestion commerciale</li><li>Stocks</li><li>RH</li><li>Tableaux de bord</li></ul></article>
       <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-mobile"/></svg></span><h3>Sites &amp; applications</h3><p>Sites vitrines, e-commerce, plateformes web et applications mobiles.</p><ul><li>Sites vitrines</li><li>E-commerce</li><li>Android &amp; iOS</li><li>SEO</li></ul></article>
       <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-cart"/></svg></span><h3>Réservation &amp; e-commerce</h3><p>Rendez-vous, catalogue, commandes : votre site vend et réserve même quand vous dormez.</p><ul><li>Prise de rendez-vous</li><li>Catalogue</li><li>Commandes</li><li>Paiement mobile</li></ul></article>
-      <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-cloud"/></svg></span><h3>Solutions SaaS</h3><p>Nos logiciels en ligne : NFC, spa, jardin d'enfants, boutique. Testez, puis payez au mois.</p><ul><li>4 SaaS</li><li>Démo gratuite</li><li>Sans engagement</li></ul></article>
+      <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-cloud"/></svg></span><h3>Applications métier</h3><p>Des applications de gestion en ligne pour votre activité : spa, crèche, boutique, cartes NFC.</p><ul><li>4 applis livrées</li><li>Clés en main</li><li>Formation incluse</li></ul></article>
       <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-nfc"/></svg></span><h3>Identité digitale &amp; NFC</h3><p>Cartes de visite connectées et profils en ligne pour vos équipes.</p><ul><li>Cartes NFC</li><li>QR codes</li><li>Statistiques</li></ul></article>
       <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-compass"/></svg></span><h3>Conseil &amp; transformation</h3><p>Un diagnostic de vos outils et une feuille de route réaliste.</p><ul><li>Audit</li><li>Choix des outils</li><li>Formation</li></ul></article>
       <article class="sc"><span class="tg">Digital</span><span class="ix"><svg><use href="#i-life"/></svg></span><h3>Hébergement &amp; maintenance</h3><p>Vos solutions restent en ligne, sauvegardées et à jour.</p><ul><li>Hébergement</li><li>Domaines</li><li>Sauvegardes</li><li>Support</li></ul></article>
@@ -878,9 +861,9 @@ footer .lg small{color:var(--on-deep-muted)}
 <section id="produits" class="deep">
   <div class="wrap" style="position:relative">
     <div style="display:grid;gap:18px;max-width:780px">
-      <span class="eyebrow">Nos SaaS</span>
-      <h2>Quatre logiciels en ligne. Testez-les avant de payer.</h2>
-      <p class="lead">SYMBATECH édite ses propres solutions. Chacune a sa démo : vous l'essayez, puis vous vous abonnez au mois si elle vous convient.</p>
+      <span class="eyebrow">Applications</span>
+      <h2>Des applications métier, conçues pour nos clients.</h2>
+      <p class="lead">Gestion d'un spa, d'une crèche, d'une boutique ou de cartes de visite NFC : nous concevons des applications sur mesure qui simplifient le quotidien de nos clients. Votre activité peut être la prochaine.</p>
     </div>
     <div class="prod-grid">
       <div class="feature rv" id="tilt">
@@ -896,8 +879,8 @@ footer .lg small{color:var(--on-deep-muted)}
           <div class="ftext" style="display:grid;gap:14px"><p>Cartes de visite NFC et profils digitaux pour les équipes : un geste avec le téléphone, le contact s'enregistre, et vous suivez chaque consultation.</p>
             <div class="chips"><span>Cartes NFC</span><span>QR codes</span><span>Profils publiés</span><span>Statistiques</span><span>Import / export</span></div></div>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
-            <a class="btn btn-light" href="https://symbatech.vercel.app" target="_blank" rel="noopener">Tester la démo <svg><use href="#i-ne"/></svg></a>
-            <a class="btn btn-light" href="#contact">Demander un accompagnement</a>
+            <a class="btn btn-light" href="https://symbatech.vercel.app" target="_blank" rel="noopener">Voir l'application <svg><use href="#i-ne"/></svg></a>
+            <a class="btn btn-light" href="#contact">Une application comme celle-ci</a>
           </div>
         </div>
       </div>
@@ -913,7 +896,7 @@ footer .lg small{color:var(--on-deep-muted)}
             </div></div>
           <p>Rendez-vous, clients, prestations, caisse et équipe dans un seul outil. Conçu avec Spa &amp; Co Luxury.</p>
           <div class="chips"><span>Agenda</span><span>Fiches clients</span><span>Caisse</span><span>Personnel</span></div>
-          <a class="btn btn-light" href="https://spaandco-erp.vercel.app/" target="_blank" rel="noopener">Tester <svg><use href="#i-ne"/></svg></a>
+          <a class="btn btn-light" href="https://spaandco-erp.vercel.app/" target="_blank" rel="noopener">Voir l'application <svg><use href="#i-ne"/></svg></a>
         </article>
         <article class="pcard rv">
           <div class="ph"><span class="pi" style="--k:#f2a900"><svg><use href="#i-kid"/></svg></span><div><h3>Gestion de jardin d'enfants</h3><small>Crèches, garderies, maternelles</small></div><span class="live sm">En ligne</span></div>
@@ -921,24 +904,24 @@ footer .lg small{color:var(--on-deep-muted)}
             <div class="kg" id="kidGrid"><i>AD</i><i>FS</i><i>MN</i><i>OB</i><i>KS</i><i>AN</i><i>IB</i><i>MD</i><i>NF</i><i>SL</i><i>YG</i><i>RT</i></div></div>
           <p>Inscriptions, suivi des enfants, parents, paiements et présences. Conçu avec Keur Cellé.</p>
           <div class="chips"><span>Inscriptions</span><span>Présences</span><span>Parents</span><span>Paiements</span></div>
-          <a class="btn btn-light" href="https://keurcelle.187-124-41-201.sslip.io/login" target="_blank" rel="noopener">Tester <svg><use href="#i-ne"/></svg></a>
+          <a class="btn btn-light" href="https://keurcelle.187-124-41-201.sslip.io/login" target="_blank" rel="noopener">Voir l'application <svg><use href="#i-ne"/></svg></a>
         </article>
         <article class="pcard rv">
           <div class="ph"><span class="pi" style="--k:#3fd39a"><svg><use href="#i-shop"/></svg></span><div><h3>Gestion boutique &amp; commerce</h3><small>Boutiques, magasins, commerces</small></div><span class="live sm">En ligne</span></div>
           <div class="mk" aria-hidden="true"><div class="mh"><b>Caisse · Vente en cours</b><span>Ticket 0427</span></div>
             <ul class="tk" id="ticket"></ul>
             <div class="tot"><span>Total</span><b id="tot">0 FCFA</b></div></div>
-          <p>Ventes, stocks, produits, clients et rapports de caisse, pour piloter un commerce au quotidien.</p>
+          <p>Ventes, stocks, produits, clients et rapports de caisse, conçue pour piloter un commerce au quotidien.</p>
           <div class="chips"><span>Ventes</span><span>Stocks</span><span>Produits</span><span>Rapports</span></div>
-          <a class="btn btn-light" href="https://187.124.41.201:8443/connexion" target="_blank" rel="noopener">Tester <svg><use href="#i-ne"/></svg></a>
+          <a class="btn btn-light" href="https://187.124.41.201:8443/connexion" target="_blank" rel="noopener">Voir l'application <svg><use href="#i-ne"/></svg></a>
         </article>
       </div>
     </div>
     <div class="model rv">
-      <div><b>Visitez</b><p>Fiche, fonctions et tarifs</p></div>
-      <div><b>Testez</b><p>Démo en ligne, données d'essai</p></div>
-      <div><b>Abonnez-vous</b><p>Paiement mensuel <span class="todo">moyens à confirmer</span></p></div>
-      <div><b>Arrêtez quand vous voulez</b><p>Sans engagement, données exportables</p></div>
+      <div><b>Sur mesure</b><p>Construite autour de votre façon de travailler</p></div>
+      <div><b>En ligne</b><p>Accessible sur ordinateur et téléphone</p></div>
+      <div><b>Formation</b><p>Vos équipes prises en main dès le lancement</p></div>
+      <div><b>Suivi</b><p>Hébergement, maintenance et évolutions</p></div>
     </div>
   </div>
 </section>
@@ -984,10 +967,10 @@ footer .lg small{color:var(--on-deep-muted)}
   <div class="wrap faq-grid">
     <div style="display:grid;gap:18px;align-content:start"><span class="eyebrow">Questions fréquentes</span><h2>Avant de nous écrire.</h2></div>
     <div class="faq">
-      <details open><summary>Quels types de projets réalisez-vous ?</summary><p>Côté tech : logiciels sur mesure, sites, applications mobiles, cartes NFC et nos SaaS. Côté communication : logo, branding, affiches, community management, personal branding, motion design, vidéo publicitaire et campagnes pour trouver des clients.</p></details>
+      <details open><summary>Quels types de projets réalisez-vous ?</summary><p>Côté tech : logiciels sur mesure, sites, applications mobiles, cartes NFC et applications métier. Côté communication : logo, branding, affiches, community management, personal branding, motion design, vidéo publicitaire et campagnes pour trouver des clients.</p></details>
       <details><summary>Comment se passe un devis ?</summary><p>Après un premier échange, nous vous envoyons une proposition et un devis clair. Rien n'est engagé avant votre validation.</p></details>
       <details><summary>Travaillez-vous en dehors de Dakar ?</summary><p>Oui. Nous avons livré des sites à Tambacounda et à Conakry, en Guinée. La plupart des échanges se font par WhatsApp et en visio.</p></details>
-      <details><summary>Peut-on tester vos SaaS avant de s'abonner ?</summary><p>Oui. Chaque solution a une démo en ligne. L'abonnement est mensuel et sans engagement.</p></details>
+      <details><summary>Pouvez-vous créer une application pour mon activité ?</summary><p>Oui. Nous avons déjà conçu des applications pour un spa, une crèche, une boutique et des cartes NFC. Après un échange sur vos besoins, nous vous proposons une maquette et un devis.</p></details>
       <details><summary>Gérez-vous les réseaux sociaux au mois ?</summary><p>Oui, en forfait mensuel : calendrier, création des publications, réponses aux abonnés et rapport de résultats.</p></details>
       <details><summary>Faites-vous le tournage des vidéos ?</summary><p>Oui : scénario, tournage, montage et sous-titres. Nous réalisons aussi des vidéos entièrement en motion design, sans tournage.</p></details>
     </div>
@@ -1015,7 +998,7 @@ footer .lg small{color:var(--on-deep-muted)}
             <input type="radio" name="need" id="n1" checked><label for="n1">Site web</label>
             <input type="radio" name="need" id="n2"><label for="n2">Logiciel ou application</label>
             <input type="radio" name="need" id="n9"><label for="n9">Réservation &amp; e-commerce</label>
-            <input type="radio" name="need" id="n3"><label for="n3">Démo d'un SaaS</label>
+            <input type="radio" name="need" id="n3"><label for="n3">Application métier</label>
             <input type="radio" name="need" id="n4"><label for="n4">Logo &amp; branding</label>
             <input type="radio" name="need" id="n5"><label for="n5">Affiches &amp; visuels</label>
             <input type="radio" name="need" id="n6"><label for="n6">Réseaux sociaux</label>
@@ -1045,13 +1028,13 @@ footer .lg small{color:var(--on-deep-muted)}
     <div class="cols">
       <div style="display:grid;gap:16px;align-content:start">
         <a class="logo lg" href="#accueil"><b><strong>SYMBA</strong><span>TECH</span></b><small>SOLUTIONS NUMÉRIQUES</small></a>
-        <p style="max-width:34ch">Logiciels, sites, SaaS, branding, vidéo et réseaux sociaux pour faire grandir votre business. Dakar, Sénégal.</p>
+        <p style="max-width:34ch">Logiciels, sites, applications, branding, vidéo et réseaux sociaux pour faire grandir votre business. Dakar, Sénégal.</p>
       </div>
       <div><h5>Entreprise</h5><ul><li><a href="#entreprise">Qui sommes-nous</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#methode">Méthode</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div><h5>Services</h5><ul><li><a href="#services">Logiciels et sites</a></li><li><a href="#services">Logo &amp; branding</a></li><li><a href="#services">Community management</a></li><li><a href="#services">Vidéo &amp; motion</a></li></ul></div>
-      <div><h5>Nos SaaS</h5><ul><li><a href="https://symbatech.vercel.app" target="_blank" rel="noopener">Plateforme NFC</a></li><li><a href="https://spaandco-erp.vercel.app/" target="_blank" rel="noopener">Gestion de spa</a></li><li><a href="https://keurcelle.187-124-41-201.sslip.io/login" target="_blank" rel="noopener">Jardin d'enfants</a></li><li><a href="https://187.124.41.201:8443/connexion" target="_blank" rel="noopener">Boutique &amp; commerce</a></li></ul></div>
+      <div><h5>Applications</h5><ul><li><a href="https://symbatech.vercel.app" target="_blank" rel="noopener">Plateforme NFC</a></li><li><a href="https://spaandco-erp.vercel.app/" target="_blank" rel="noopener">Gestion de spa</a></li><li><a href="https://keurcelle.187-124-41-201.sslip.io/login" target="_blank" rel="noopener">Jardin d'enfants</a></li><li><a href="https://187.124.41.201:8443/connexion" target="_blank" rel="noopener">Boutique &amp; commerce</a></li></ul></div>
     </div>
-    <div class="legal"><span>© 2026 SYMBATECH. Tous droits réservés.</span><span>Mentions légales · Confidentialité · Conditions d'abonnement</span></div>
+    <div class="legal"><span>© 2026 SYMBATECH. Tous droits réservés.</span><span>Mentions légales · Confidentialité</span></div>
   </div>
   <div class="fgiant" aria-hidden="true"><strong>SYMBA</strong><span>TECH</span></div>
 </footer>
@@ -1062,22 +1045,6 @@ footer .lg small{color:var(--on-deep-muted)}
   var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
   function $(id){return document.getElementById(id)}
   function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
-
-  /* Day / night */
-  var root=document.documentElement,tb=$('themeBtn'),mq=matchMedia('(prefers-color-scheme: dark)');
-  try{var saved=localStorage.getItem('symbatech-theme');if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved)}catch(e){}
-  function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':mq.matches}
-  function syncBtn(){var d=isDark();tb.dataset.mode=d?'dark':'light';tb.setAttribute('aria-label',d?'Passer en mode jour':'Passer en mode nuit')}
-  syncBtn();mq.addEventListener('change',syncBtn);
-  new MutationObserver(syncBtn).observe(root,{attributes:true,attributeFilter:['data-theme']});
-  tb.addEventListener('click',function(){
-    var next=isDark()?'light':'dark';
-    function apply(){root.setAttribute('data-theme',next);syncBtn();try{localStorage.setItem('symbatech-theme',next)}catch(e){}}
-    if(!document.startViewTransition||reduce){apply();return}
-    var r=tb.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,rad=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
-    var t=document.startViewTransition(apply);
-    t.ready.then(function(){root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+rad+'px at '+x+'px '+y+'px)']},{duration:750,easing:'cubic-bezier(.2,.8,.2,1)',pseudoElement:'::view-transition-new(root)'})}).catch(function(){});
-  });
 
   var mb=$('menuBtn'),nav=$('nav');
   mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Fermer':'Menu'});
@@ -1239,7 +1206,7 @@ footer .lg small{color:var(--on-deep-muted)}
     cta.addEventListener('mouseleave',function(){chs.forEach(function(c){c.style.fontWeight='';c.style.fontStretch=''});mag.style.transform=''});
   }
 
-  /* SaaS mocks */
+  /* Application mocks */
   var kids=[].slice.call(document.querySelectorAll('#kidGrid i')),kc=$('kidCount'),ki=0;
   var items=[['Huile de karité',3500],['Savon noir',1500],['Parfum 50 ml',12000],['Crème visage',8500],['Lait corporel',4500]];
   var tk=$('ticket'),tot=$('tot'),ti=0,sum=0,shown=0;
